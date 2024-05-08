@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+.hide {
+    display: none;
+}
+
+body {
+    background: linear-gradient(220deg, rgb(255 149 0) 0%, rgb(231, 179, 110) 100%);    
+    background-repeat: no-repeat;
+    background-size: 200%, 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    animation: bodyTransition 2s alternate infinite;
+}
+
+@keyframes bodyTransition{
+    0%{
+        background-position-x: 0%;
+    }
+    100%{
+        background-position-x: 100%;
+    }
+}
+
+main {
+    background-color: white;
+    width: min(42.8rem, 90%);
+    box-shadow: 0 .2rem .5rem #7a7171;
+    /*box-shadow: x y blur*/
+    padding: 4.8rem 6.4rem 6.4rem;
+    border-radius: .5rem;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.4rem;
+    margin-bottom: 1.4rem;
+    font-weight: bold;
+}
+
+.screen1 {
+
+    /*screen1*/
+    & p {
+        font-size: 1.5rem;
+        font-family: "DM Sans", sans-serif;
+    }
+
+    & button {
+        margin-top: 1.4rem;
+        border: none;
+        background-color: white;
+    }
+}
+
+.screen1 button:hover {
+    cursor: pointer;
+    animation: vibration 90ms alternate infinite;
+}
+
+@keyframes vibration {
+    0% {
+        margin-left: 0;
+    }
+
+    25% {
+        margin-left: 5px;
+        transform: rotate(1deg);
+    }
+
+    50% {
+        margin-left: 0;
+        transform: rotate(2deg);
+    }
+
+    75% {
+        margin-left: -5px;
+        transform: rotate(-1deg);
+    }
+
+    100% {
+        margin-left: 0;
+    }
+}
+
+/* @keyframes vibration{
+    0%{
+        transform: rotate(2deg) translateX(-.4rem) translateY(-.3rem);
+    }
+    100%{
+        transform:translateX(.3rem) translateY(.3rem) translateZ(.1rem);
+    }
+} */
+
+/*screen2*/
+.screen2 {
+    & h1{
+        margin-bottom: 1.7rem;
+    }
+
+    & p {
+        background-color: #E4EDF1;
+        box-shadow: .2rem .2rem .2rem hsla(0, 0%, 0%, 0.5);
+        font-family: "Dancing Script", cursive;
+        font-size: 2.4rem;
+        font-weight: 500;
+        margin-bottom: 1.7rem;
+        animation: appearMessage 1.2s ease-out;
+    }
+
+    & button {
+        font-family: "DM Sans", sans-serif;
+        background-color: #FF9500;
+        color: white;
+        border: none;
+        padding: 1.6rem;
+        max-width: fit-content;
+        margin-inline: auto;
+        font-weight: bold;
+        border-radius: .4rem;
+        margin-top: 1.7rem;
+        cursor: pointer;
+    }
+}
+
+@keyframes appearMessage{
+    0%{
+        opacity: 0;
+        transform: scale(0.2) translateY(30rem);
+    }
+}
